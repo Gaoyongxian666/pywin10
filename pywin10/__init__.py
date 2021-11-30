@@ -32,7 +32,7 @@ class TaskBarIcon:
     """
 
     def __init__(self, icon: str = None, hover_text: str = "TaskBarIcon", menu_style: str = "normal",
-                 menu_options: list = None, left_click=None, double_click=None):
+                 menu_options: list = None, left_click=None, double_click=None, icon_x_pad: int = 7):
         """
         Args:
             icon: 图标文件路径
@@ -41,6 +41,7 @@ class TaskBarIcon:
             menu_options: 右键菜单.菜单项格式:["菜单项名称","菜单项图标路径或None",回调函数或者子菜单列表,id数字(随便写不要重复即可)]
             left_click: 左键单击回调函数
             double_click: 左键双击回调函数
+            icon_x_pad: 图标左边距
         """
         # 传参
         self.icon = icon
@@ -100,7 +101,7 @@ class TaskBarIcon:
         self.menu_icon_height = win32api.GetSystemMetrics(win32con.SM_CYMENU) - 4
         self.menu_icon_width = self.menu_icon_height
         # space from end of icon to start of text.
-        self.icon_x_pad = 7
+        self.icon_x_pad = icon_x_pad
 
         self.menu_item_map = {}
         self.hmenu = CreatePopupMenu()

@@ -69,7 +69,7 @@
                 double_click=self._show,  # 左键双击回调函数,可以不设置(如果不想传参,直接写函数名称)
                 icon="python.ico",  # 设置图标,可以不设置
                 hover_text="TaskBarIcon",  # 设置悬浮在小图标显示的文字,可以不设置
-                menu_options=[  #可以不设置
+                menu_options=[  # 可以不设置
                     ['退出', "退出.ico", self.exit, 1],  # 菜单项格式:["菜单项名称","菜单项图标路径或None",回调函数或者子菜单列表,id数字(随便写不要重复即可)]
                     ["分隔符", None, None, 111],
                     ['顶一顶', "ding.ico", (self.ding, (1, 2, 3)), 44],
@@ -83,7 +83,8 @@
                         ['hello2', "github.ico", None, 1116],
                     ], 4],
                 ],
-                menu_style="normal"  # 设置右键菜单的模式,可以不设置:normal(不展示图标),iconic(展示图标)
+                menu_style="iconic",  # 设置右键菜单的模式,可以不设置:normal(不展示图标),iconic(展示图标)
+                icon_x_pad=12,  # 设置图标左边距
             )
             # 注意这是死循环，类似与tkinter中的mainloop,
             # 因为都是死循环,所以与mainloop会冲突,放到线程里面执行.

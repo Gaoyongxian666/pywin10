@@ -13,7 +13,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="pywin10",
-    version="0.0.2",
+    version="0.0.3",
     author="Gaoyongxian666",
     author_email="g1695698547@163.com",
     description="基于Pywin32,封装了系统托盘,右键菜单,win10通知栏等功能",
